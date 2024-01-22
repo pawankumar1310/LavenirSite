@@ -1,0 +1,58 @@
+﻿function preback()
+{
+    window.history.forward();
+}
+setTimeout("preback()", 0);
+window.onunload = function ()
+{
+    null;
+}
+
+$(document).ready(function () {
+    searchSchool();
+
+    $('.eventLink').click(function () {
+        event.preventDefault();
+        saveEventSeenInformation(($(this).attr('event_id')));
+        window.open(($(this).attr('event_link')), '_blank');
+       
+    });
+});
+
+function saveEventSeenInformation(eventID) {
+    $(".eventLink").click(function () {
+        $.ajax({
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            url: "HomeWebForm.aspx/saveUserEventSeenInformation",
+            data: "{'eventID':'" + eventID + "'}",
+            dataType: "json",
+            success: function () {
+                alert("Success");
+            },
+            error: function () {
+                alert("Not Saved");
+            }
+        });
+    });
+});
+
+function searchSchool() {
+    $("#txtSchoolName").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "HomeWebForm.aspx/GetSchoolName",
+                data: "{'schoolName':'" + document.getElementById('txtSchoolName').value+ "'}",
+                dataType: "json",
+                success: function (data) {
+                    response(data.d);
+                },
+                error: function (result) {
+                    alert("No Match");
+                }
+            });
+        }
+    });
+}

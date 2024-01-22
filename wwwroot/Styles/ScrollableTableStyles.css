@@ -1,0 +1,36 @@
+﻿.table-wrapper {
+    width: 100%;
+    overflow: auto;
+}
+
+.eventsTable {
+    border: 1px solid #3399FF;
+    margin-top: 10px;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.tableHeading {
+    width: auto;
+    padding: 12px;
+    border: 1px solid #3399FF;
+    text-align: center;
+    font-size: 16px;
+    color: #3399FF;
+    background-color: black;
+}
+
+.tableData {
+    width: auto;
+    padding: 12px;
+    border: 1px solid #3399FF;
+    text-align: center;
+    font-size: 16px;
+    color: #3399FF;
+    background-color: black;
+}
+
+    .tableData a {
+        color: #3399FF;
+        text-decoration: underline;
+    }

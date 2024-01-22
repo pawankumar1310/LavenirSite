@@ -1,0 +1,90 @@
+﻿/* General Blueprint Style */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@font-face { font-family: 'bpicons'; src: url('../fonts/bpicons/bpicons.eot'); src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg'); font-weight: normal; font-style: normal; }
+/* Made with http://icomoon.io/ */
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0; }
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+.bp-icon-next:after { content: "\e000"; }
+.bp-icon-drop:after { content: "\e001"; }
+.bp-icon-archive:after { content: "\e002"; }
+.bp-icon-about:after { content: "\e003"; }
+.bp-icon-prev:after { content: "\e004"; }
+
+.main { width: 100%; max-width: 100em; }
+
+.lstNotification { border: 6px solid rgba(255,255,255,0.0); background: rgba(255,255,255,0.2); display: inline-block; width: 280px; border-radius: 8px; height: 170px; margin: 4px; position: relative; }
+    .lstNotification:hover { background: rgba(0,0,0,0.01); border-color: rgba(255,255,255,0.4); }
+
+.lstContent { display: inline-table; }
+    .lstContent:before { content: ""; background-image: url(../images/eFeeLogo_I.png_128x128.png); background-attachment: initial; height: 100%; position: absolute; width: 100%; left: 0px; opacity: 0.2; background-repeat: no-repeat; background-position: center bottom; }
+
+#tblVoucherInfo tr:nth-child(even) { background-color: #F98D70; }
+
+.gridViews { font-size: 16px; }
+    .gridViews td, .gridViews th { padding: 5px; border: 2px solid #F98262; }
+.gridItemstyle { height: 28px; padding-top: 3px; padding-bottom: 3px; padding-right: 4px; background-color: #F98D70; color: white; }
+.gridheader { height: 30px; padding-top: 3px; padding-bottom: 3px; background-color: #CC6B51; color: white; }
+.gridAlternative { height: 28px; padding-top: 3px; padding-bottom: 3px; background-color: #E3775A; color: white; }
+
+.divSchoolLogo { font-size: 22px; color: black; top: 1px;left:29%; position: absolute; text-align: center; }
+
+#divProcessBar { display: none; }
+.progressbar { opacity: 1; filter: alpha(opacity=0); top: 0; left: 0; z-index: 9000; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3) !important; }
+
+.loader { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9999; }
+
+#loaderIMG { position: absolute; left: 45%; top: 48%; -webkit-animation: spin 3s linear infinite; animation: spin 3s linear infinite; }
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+
+    100% { transform: rotate(360deg); }
+}
+
+.divInnerProcessLayout { position: absolute; left: 45%; top: 40%; }
+
+.InnerProcessIMG { -webkit-animation: spin 3s linear infinite; animation: spin 3s linear infinite; }
+
+.txtCount11 { width: 100%; font-size: 16px; position: absolute; background-color: rgba(255, 255, 255, 0.5); color: #ff0b0b; /* font-family: timesnewroman; */ padding: 7px 0 6px 0; top: 0px; border-radius: 20px; left: 0px; text-align: center; }
+
+.txtCount { /* width: 100%; */ font-size: 17px; float: right; right: -2px; position: relative; /*background-color: rgba(249, 249, 249, 0.86);*/ color: #fff; /* font-family: timesnewroman; */ padding: 5px 0 5px 2px; /* border-radius: 20px; */ top: 0px; text-align: center; }
+
+
+.user-thumb { background: none repeat scroll 0 0 #FFFFFF; float: left; height: 40px; margin-right: 10px; margin-top: 5px; padding: 2px; width: 40px; }
+.user-info { color: #666666; font-size: 14px; color: #FFF; }
+
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3); border-radius: 10px; }
+
+::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0 0 20px rgba(255,255,255,1); }
+.ViewDetail {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+    .ViewDetail:hover, .termconitionLinks1:hover {
+        color: #8c2c17;
+        letter-spacing: 0.6px;
+    }
+
+.termconitionLinks1 {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+    color: white;
+    font-size: 18px;
+}

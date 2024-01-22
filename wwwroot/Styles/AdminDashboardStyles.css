@@ -1,0 +1,40 @@
+#txtEventDate::-webkit-calendar-picker-indicator, #txtAchievementDate::-webkit-calendar-picker-indicator {
+    border: 1px solid #3399FF;
+    background-color: #3399FF;
+    margin-right: 5px;
+}
+
+#fuPoster::-webkit-file-upload-button, #fuAchievement::-webkit-file-upload-button {
+    border: 1px solid #3399FF;
+    background-color: #3399FF;
+    color: black;
+    font-weight: bold;
+}
+
+/*.social-input-container {
+    
+}
+
+.social-media-icon {
+    margin-top: 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: white;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}*/
+
+.social-input-container {
+    width: 100%;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+    .social-input-container img {
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        width: 30px;
+        height: 31px;
+    }                                                                                                                                                                                                                                                 

@@ -1,0 +1,683 @@
+/* General Demo Style */
+/*@import url(http://fonts.googleapis.com/css?family=Lato:100,400,700,900);*/
+
+@font-face { font-family: HandelGothic; src: url('../font/handelgothic.eot?iefix') format('eot'), url('../font/HandelGothic.woff') format('woff'), url('../font/HandelGothic.ttf') format('truetype'), url('../font/HandelGothic.svg#svgFontName') format('svg'); }
+
+@font-face { font-family: "Autoradiographic"; src: url('../font/autoradiographic rg.eot?iefix') format('eot'), url('../font/AutoradiographicRg-Regular.woff') format('woff'), url('../font/autoradiographic rg.ttf') format('truetype'), url('../font/AutoradiographicRg-Regular.svg#svgFontName') format('svg'); }
+
+html { height: 100%; font-size: 100%; }
+
+*,
+*:after,
+*:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0; margin: 0; }
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after { content: " "; display: table; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { *zoom: 1; }
+
+body { font-family: HandelGothic; background: #f9f9f9; font-weight: 400; font-size: 1em; color: #333; overflow: auto; overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 10px; height: 12px; }
+
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); border-radius: 10px; }
+
+::-webkit-scrollbar-track-piece { background-color: white transparent; }
+
+::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); }
+
+    ::-webkit-scrollbar-thumb:vertical { height: 20px; background-color: whitesmoke; }
+
+a { color: #555; text-decoration: none; }
+
+.container { width: 100%; position: relative; }
+
+    .container > header { width: 90%; max-width: 76em; margin: 0 auto; padding: 0 1.875em 3.125em 1.875em; }
+
+    .container > header { padding: .6em 2.2em 0em; }
+
+        .container > header h1 { font-size: 2.125em; line-height: 1; margin: 0; font-weight: 700; color: #333; float: left; }
+
+            .container > header h1 span { display: block; font-size: 65%; font-weight: 300; }
+
+/* Header Style */
+.codrops-top { line-height: 2.5; font-size: 0.688em; background: #fff; background: rgba(255, 255, 255, 0.5); text-transform: uppercase; z-index: 9999; position: relative; box-shadow: 1px 0px 2px rgba(0,0,0,0.2); }
+
+    .codrops-top a { padding: 0 1em; letter-spacing: 0.1em; color: #333; display: inline-block; }
+
+        .codrops-top a:hover { background: rgba(255,255,255,0.8); color: #000; }
+
+    .codrops-top span.right { float: right; }
+
+        .codrops-top span.right a { float: left; display: block; }
+
+/* Demo Buttons Style */
+.codrops-demos { float: right; padding-top: 3.1em; }
+
+    .codrops-demos a { display: inline-block; /* margin: 0.625em; */ color: #000; /* font-weight: 700; */ font-size: 90%; font-family: Autoradiographic; }
+
+        .codrops-demos a:hover { color: #000; text-decoration: none; }
+
+        .codrops-demos a.current-demo,
+        .codrops-demos a.current-demo:hover { color: #aaa; border-color: #aaa; }
+
+.support-note { clear: both; }
+
+    .support-note span { color: #ac375d; display: none; font-weight: bold; text-align: center; padding: 0.313em 0; }
+
+h3 { font: Verdana; }
+
+.feedbackBox { height: 120px; Width: 100%; padding-left: 10px; border-radius: 4px; border: 1px solid rgb(186, 178, 178); font-size: 15px; /*margin-left:10px;*/ }
+
+/*================== Collapse & Expand=============*/
+
+.DataPagers span { font-size: 19px !important; color: black; font-weight: 100; display: inline-block !important; /* margin: auto 0; */ width: 10px !important; padding-right: 15px !important; }
+
+.DataPagers a { text-decoration: underline; color: white !important; }
+
+DataPagers a:hover { background-color: #1D7272; }
+
+.SearchBoxes { color: #fff; background-color: #29A3A3; /* border: 1px solid #145252; */ position: relative; padding: 10px; font-size: 20px; cursor: pointer; overflow: hidden; height: 40px; }
+
+    .SearchBoxes h4 { float: left; font-weight: 100; }
+
+    .SearchBoxes * { cursor: pointer; }
+
+    .SearchBoxes:hover { filter: alpha(opacity=80); opacity: 0.80; }
+
+/*Accordian*/
+.accordion2 { width: 100%; background: none; }
+
+    .accordion2 .accordion-head { color: #fff; background-color: #29A3A3; /* border: 1px solid #145252; */ position: relative; padding: 10px; font-size: 0.8em; cursor: pointer; overflow: hidden; height: 40px; }
+
+        .accordion2 .accordion-head * { cursor: pointer; }
+
+        .accordion2 .accordion-head h4 { float: left; font-weight: 100; }
+
+        .accordion2 .accordion-head:hover { filter: alpha(opacity=80); opacity: 0.80; }
+
+    .accordion2 .accordion-body { background: #fff; /*1D7272*/ border-bottom: 1px solid #145252; font-family: autoradiographic; font-size: 15px; padding: 1px; text-align: center; /*padding: 20px;*/ height: auto; }
+
+.arrow { float: right; width: 0px; height: 0px; margin-top: 5px; border: 10px solid transparent; border-top-color: #F3F3F3; }
+
+.accordion-head.open .arrow { margin-top: -6px; border-bottom-color: #fff; border-top-color: transparent; }
+
+.lvContent { padding: 2px 2px 0 4px; text-align: left; top: 0; vertical-align: top; font-size: 12px; }
+
+.tabsContainer { font-family: autoradiographic; font-size: 16px; padding: 0px; text-align: center; /*padding: 20px;*/ height: auto; }
+
+#lblSearchFor { font-family: autoradiographic; color: #fff; background-color: #2DB4B4; border: none; position: relative; padding: 5px; height: auto; font-size: 18px; text-align: center; display: none; }
+
+.topFont { font-size: 16px; width: 50px; }
+
+.icon { width: 30px; height: 30px; /* position: absolute; */ float: right; }
+
+.txt { background: red; font-size: 18px; position: absolute; font-family: timesnewroman; padding: 2px; top: 0; right: 0; float: right; }
+
+/*=======================================================================*/
+.fieldBuddyDescription { height: 24px; Width: 100%; padding-left: 2px; border-radius: 2px; border: none; font-size: 15px !important; font-family: arial !important; }
+
+.fields { height: 35px; Width: 400px; padding-left: 10px; border-radius: 4px; border: 1px solid rgb(186, 178, 178); font-size: 15px !important; font-family: arial !important; }
+
+.fieldsRequired { height: 35px; Width: 400px; padding-left: 10px; border-radius: 4px; border-color: red; background-color: rosybrown; border: 1px solid red; font-size: 15px; }
+
+.fieldsRequiredEmailMobile { height: 35px; Width: 260px; padding-left: 10px; border-radius: 4px; border-color: red; background-color: rosybrown; border: 2px solid red; font-size: 15px; }
+
+#divGetInTouch { display: inline-flex; font-size: 20px; }
+
+.fieldsPwd { height: 35px; Width: 200px; padding-left: 5px; border-radius: 4px; border: 1px solid rgb(186, 178, 178); font-size: 15px; }
+
+.fields1 { height: 35px; padding-left: 10px; border-radius: 4px; border: 1px solid rgb(186, 178, 178); }
+
+.fields2 { height: 30px; WIDTH: 300px; padding-left: 5px; border-radius: 4px; background-color: white; border: 1px solid rgb(186, 178, 178); }
+
+.fields3 { height: 30px; WIDTH: 300px; font-size: 15px; padding-left: 5px; border-radius: 4px; border: 1px solid rgb(186, 178, 178); }
+
+.fields4 { height: 30px; WIDTH: 140px; font-size: 15px; padding-left: 5px; background-color: whitesmoke; border-radius: 4px; border: 1px solid rgb(186, 178, 178); }
+
+.OTPfields { height: 35px; WIDTH: 262px; margin-left: 6px; font-size: 15px; padding-left: 5px; background-color: whitesmoke; border-radius: 4px; border: 1px solid rgb(186, 178, 178); }
+
+.fields5 { height: 30px; WIDTH: 250px; font-size: 15px; padding-left: 5px; border-radius: 4px; border: 1px solid rgb(186, 178, 178); }
+
+.Text_Address { WIDTH: 400px; border-radius: 4px; border: 1px solid rgb(186, 178, 178); resize: none; font-size: 15px; padding-left: 10px; }
+
+#preheader, #prefooter, #preheader2, #prefooter2 { height: 87px; WIDTH: 100%; resize: none; padding-left: 8px; padding-top: 5px; border: none; border-radius: 4px; background-color: white; }
+
+#MessageTextBox, #MessageTextBox2 { height: 128px; WIDTH: 100%; margin-top: -4px; margin-bottom: -5px; padding-left: 8px; resize: none; border: none; }
+
+#BTN { height: 35px; WIDTH: 80px; border-radius: 4px; background-color: #339966; border: 1px solid rgb(186, 178, 178); }
+
+#Reset1 { height: 35px; WIDTH: 80px; border-radius: 4px; background-color: #339966; border: 1px solid rgb(186, 178, 178); float: right; }
+
+.imgBtnVerifyOTP_Reg { height: 35px; padding: 6px; WIDTH: 70px; border-radius: 4px; background-color: #b97eb9; border: 2px solid #b97eb9; }
+
+    .imgBtnVerifyOTP_Reg:hover { background-color: #493149; }
+
+.imgBtnSendFeedback { /*height: 40px;
+    WIDTH: 100px;*/ border-radius: 4px; background-color: #f36a4b; border: 2px solid #f36a4b; }
+
+    .imgBtnSendFeedback:hover { background-color: #8c2c17; }
+
+#imgSave, #imgCancel, #imgSaveData, #imgDataCancel { /*height: 38px;
+    WIDTH: 85px;*/ border-radius: 4px; background-color: #b97eb9; border: 2px solid #b97eb9; }
+
+    #imgSave:hover, #imgCancel:hover, #imgSaveData:hover, #imgDataCancel:hover { background-color: #493149; }
+
+#btnUpload { display: none; }
+
+.mce-btn button:hover { background-color: transparent; }
+
+.btnMyProfile { border-radius: 4px; background-color: #b97eb9; border: 2px solid #b97eb9; }
+
+    .btnMyProfile:hover { background-color: #493149; }
+
+#btnSendForgotpwd, #btnCancelForgot, #btnOkForgotpwd, #btnChangePwd, #btnChangePwdCancel, #btnSaveNewPassword, #btnCancelNewPassword { border-radius: 4px; background-color: #cf5994; border: 2px solid #cf5994; }
+
+    #btnSendForgotpwd:hover, #btnCancelForgot:hover, #btnOkForgotpwd:hover, #btnChangePwd:hover, #btnChangePwdCancel:hover, #btnSaveNewPassword:hover, #btnCancelNewPassword:hover { background-color: #7A2952; border-color: #993366; }
+
+#btnSaveFeePayment, #btnDownloadRCPT, #btnPrintFeePayment, .btnBackFee { border-radius: 4px; background-color: #DD4D2C; border: 2px solid #DD4D2C; }
+
+    #btnSaveFeePayment:hover, #btnDownloadRCPT:hover, #btnOkCustomPayment:hover, #btnCancelCustomPayment:hover, #btnPrintFeePayment:hover, .btnBackFee:hover, #btnPayOnline:hover, #BtnContinuePayment:hover, #BtnContinueNetbanking:hover { background-color: #8C2C17; }
+
+#btnFeedBack, #btnExit { margin-top: 5px; border-radius: 4px; background-color: #DD4D2C; border: 2px solid #DD4D2C; color: white; font-size: 16px; }
+
+    #btnFeedBack:hover, #btnExit:hover { background-color: #8C2C17; cursor: pointer; }
+
+#btnPayOnline, #btnOkCustomPayment, #btnCancelCustomPayment, #BtnContinuePayment, #BtnContinueNetbanking { border-radius: 4px; background-color: #e2674a; border: 2px solid #e2674a; }
+
+#btnsaveFeeDetails, #btnPrintFeeDetails { border-radius: 4px; background-color: #FFB41F; border: 2px solid #FFB41F; }
+
+    #btnsaveFeeDetails:hover, #btnPrintFeeDetails:hover { background-color: #CC8800; }
+
+#btnSavePayHistory:hover, #btnPrintPayHistory:hover { background-color: #313149; }
+
+#btnSavePayHistory, #btnPrintPayHistory { border-radius: 4px; background-color: #5A5A87; border: 2px solid #5A5A87; }
+
+#btnSavePendingTx, #btnPrintPendingTx { border-radius: 4px; background-color: #1F5C3D; border: 1px solid rgb(186, 178, 178); }
+
+#btnSearchNotice, #btnresetNotice, #btnshaowAllNotice { height: 35px; WIDTH: 85px; border-radius: 4px; background-color: #588787; border: 2px solid #588787; }
+
+    #btnSearchNotice:hover, #btnresetNotice:hover, #btnshaowAllNotice:hover { background-color: #314949; cursor: pointer; }
+
+#btnCheckAll, #btnClearAll, #BtnDeleteAlert { height: 40px; WIDTH: 100px; border-radius: 4px; color: white; background-color: #339966; border: 2px solid #339966; }
+
+    #btnCheckAll:hover, #btnClearAll:hover, #BtnDeleteAlert:hover { background-color: #0F2E1F; cursor: pointer; }
+
+#btnlogin:hover { background-color: #996699; cursor: pointer; }
+
+#btnlogin { height: 22px; WIDTH: 50px; border-radius: 2px; background-color: #CC6699; border: 1px solid rgb(186, 178, 178); }
+
+.imgBtnLogin:hover { cursor: pointer; }
+
+.imgBtnLogin { border-radius: 2px; border: 1px solid rgb(186, 178, 178); }
+
+#txtLoginMobile, #txtLoginMobileVerified { background: url(../images/phone.ico) no-repeat right center; background-size: 16px 16px; }
+
+#btnSignOut { height: 20px; WIDTH: 30px; border-radius: 2px; background-color: #CC6699; border: 1px solid rgb(186, 178, 178); }
+
+    #btnSignOut:hover { background-color: #996699; cursor: pointer; }
+
+#lblSchoolImage { height: 65px; width: 65px; }
+
+#ImageButton2 { border-radius: 2px; border: 1px solid rgb(186, 178, 178); }
+
+    #ImageButton2:hover { cursor: pointer; }
+
+#divProcessBuddies { display: none; }
+
+#ImgBtnSearchBuddy, #ImgBtnResetBuddy { border-radius: 4px; background-color: #2DB4B4; border: 2px solid #2DB4B4; }
+
+    #ImgBtnSearchBuddy:hover, #ImgBtnResetBuddy:hover { background-color: #145252; cursor: pointer; }
+
+#btnCloseProfile { border-radius: 4px; background-color: #2DB4B4; border: 2px solid #2DB4B4; }
+
+.linkbtnListView { background-color: #2DB4B4; border: 1px solid #33cccc; padding: 5px; color: #fff !important; font-size: 15px !important; }
+
+    .linkbtnListView:hover, #btnCloseProfile:hover { background-color: #145252; cursor: pointer; }
+
+/*===================================================== Table Formates ==============================================*/
+#tblNotice th, #tblNotice td { padding: 8px; border-right: 1px solid #314949; }
+
+#tblNotice tr:nth-child(odd) { background-color: #629393; }
+
+#tblNotice tr:nth-child(even) { background-color: #527a7a; }
+
+/*--------------------------------------------------------    Fee Details Tile ---*/
+#tblPaymentHistory th, #tblPaymentHistory td { padding: 8px; border-right: 1px solid #E09600; }
+
+#tblPaymentHistory tr:nth-child(odd) { background-color: #6e6c6b; }
+
+#tblPaymentHistory tr:nth-child(even) { background-color: #ffb41f; }
+
+#Allinfo th, #Allinfo td {
+    padding: 8px;
+    border-right: 1px solid #E09600;
+}
+
+#Allinfo tr:nth-child(odd) {
+    background-color: #6e6c6b;
+}
+
+#Allinfo tr:nth-child(even) {
+    background-color: #ffb41f;
+}
+
+
+bodytext #tblFeeDetailExample th, #tblFeeDetailExample td { padding: 2px; border-right: 1px solid #E09600; }
+
+#tblFeeDetailExample tr:nth-child(odd) { background-color: #6e6c6b; }
+
+#tblFeeDetailExample tr:nth-child(even) { background-color: #ffb41f; }
+
+/*-----------------------==================== Payment history ======================------------------------------------*/
+
+#tblPendingTransaction th, #tblPendingTransaction td, #pendingTxStatic th, #pendingTxStatic td { padding: 5px; border-left: 1px solid #313149; }
+
+#tblPendingTransaction tr:nth-child(even), #pendingTxStatic tr:nth-child(even) { background-color: #52527a; }
+
+#tblPendingTransaction tr:nth-child(odd), #pendingTxStatic tr:nth-child(odd) { background-color: #626293; }
+
+#tbldescription th, #tbldescription td, #tbldescriptionStatic th, #tbldescriptionStatic td { padding: 8px; border-left: 1px solid #313149; color: white; }
+
+#tbldescription tr:nth-child(even), #tbldescriptionStatic tr:nth-child(even) { background-color: #49496e; }
+
+#tbldescription tr:nth-child(odd), #tbldescriptionStatic tr:nth-child(odd) { background-color: #585867; }
+
+/*----------------------======================= Fee Payment ==========================------------------------------------*/
+.tblInnerData { font-size: 18px; }
+
+.tblHeader { font-size: 18px; }
+
+#tblConfirmPayment { font-size: 17px; }
+
+    #tblFeePayment th, #tblFeePayment td, #tblConfirmPayment th, #tblConfirmPayment td, #tblTransaction td { padding: 8px; border-right: 1px solid #8c2c17; }
+
+#tblFeePay { font-size: 18px; border-width: 1px; border-collapse: collapse; }
+
+#tblFeePayment tr:nth-child(even), #tblConfirmPayment tr:nth-child(even), #tblTransaction tr:nth-child(even) { background-color: #e05c3e; }
+
+#tblFeePayment tr:nth-child(odd), #tblConfirmPayment tr:nth-child(odd), #tblTransaction tr:nth-child(odd) { background-color: #d34322; }
+
+#tblTotalFeeDetail th, #tblTotalFeeDetail td, #tblTotalFinePaid th, #tblTotalFinePaid td { padding: 8px; border-right: 1px solid #8c2c17; }
+
+#tblTotalFeeDetail tr:nth-child(even), #tblTotalFinePaid tr:nth-child(even) { background-color: #d34322; }
+
+#tblTotalFeeDetail tr:nth-child(odd), #tblTotalFinePaid tr:nth-child(odd) { background-color: #e05c3e; }
+
+#tblTotalFeesDueDetail th, #tblTotalFeesDueDetail td, #tblPreviousFeesDueDetail th, #tblPreviousFeesDueDetail td { padding: 8px; border-right: 1px solid #8c2c17; }
+
+#tblTotalFeesDueDetail tr:nth-child(even), #tblPreviousFeesDueDetail tr:nth-child(even) { background-color: #d34322; }
+
+#tblTotalFeesDueDetail tr:nth-child(odd), #tblPreviousFeesDueDetail tr:nth-child(odd) { background-color: #e05c3e; }
+
+#tblCustomfeePayment { font-size: 18px; }
+
+#tblCustomPayment th, #tblCustomPayment td { padding: 5px; border-right: 1px solid #8c2c17; }
+
+#tblCustomPayment tr:nth-child(even) { background-color: #d34322; }
+
+#tblCustomPayment tr:nth-child(odd) { background-color: #e05c3e; }
+
+#tblTotalFeesPaid th, #tblTotalFeesPaid td, #tblCurrentDueDetail th, #tblCurrentDueDetail td { padding: 8px; border-right: 1px solid #8c2c17; }
+
+#tblTotalFeesPaid tr:nth-child(even), #tblCurrentDueDetail tr:nth-child(even) { background-color: #d34322; }
+
+#tblTotalFeesPaid tr:nth-child(odd), #tblCurrentDueDetail tr:nth-child(odd) { background-color: #e05c3e; }
+
+#tblAlertData th, #tblAlertData td { padding: 8px; border-right: 1px solid #194D33; }
+
+#tblAlertData tr:nth-child(even) { background-color: #2E8A5C; }
+
+#tblAlertData tr:nth-child(odd) { background-color: #297A52; }
+
+#linkReciept { text-decoration: underline; color: white; }
+
+    #linkReciept:hover { color: #cc8800; }
+
+#Reset11 { height: 35px; WIDTH: 80px; border-radius: 4px; background-color: #669999; border: 1px solid rgb(186, 178, 178); float: right; }
+
+    #BTN1:hover, #Reset11:hover { background-color: #83c3c3; cursor: pointer; }
+
+#Forgotpwd:hover { font: bold; color: red; }
+
+.form-field-label.small { color: #b3b3b3; padding: 1px 0 0 0; display: none; font-size: 10px; position: absolute; top: 0; left: 4px; font-weight: bold; }
+
+#tblPaymentHistory { font-size: 14px; }
+#Allinfo {
+    font-size: 14px;
+}
+
+#tblPendingTransaction { font-size: 16px; }
+
+.BodyText { font-size: 18px; width: 125px; }
+
+.BodyTextor { font-size: 16px; }
+
+.BodyTextDate { font-size: 16px; }
+
+.BodyTextPwd { font-size: 16px; font-family: Autoradiographic; }
+
+BodyText1Pwd { width: 100%; font-size: 20px; background: #63d1dc; font-family: Autoradiographic; padding-top: 5px; padding-bottom: 5px; height: 35px; }
+
+.BodyText2 { font-size: 20px; width: 125px; }
+
+.BodyText3 { font-size: 20px; width: 250px; }
+
+.BodyText4 { font-size: 20px; width: 125px; }
+
+.BodyText1 { width: 95%; font-size: 20px; padding-top: 5px; padding-bottom: 5px; height: 40px; }
+
+.BodyTextReg { width: 95%; font-size: 20px; padding-top: 5px; padding-bottom: 5px; height: 40px; }
+
+.BodyTextHeading { width: 100%; font-size: 25px; padding-top: 5px; padding-bottom: 5px; height: auto; }
+
+#loginpnl { position: relative; margin-top: -10px; float: right; font-family: Autoradiographic; font-size: 15px; }
+
+#imgLoginBack { vertical-align: sub; height: 22px; width: 22px; opacity: 0.4; cursor: pointer; border: solid 2px red; padding: 1px; border-radius: 10px; }
+
+    #imgLoginBack:hover { opacity: 1; cursor: pointer; }
+
+.Logfields { height: 20px; font-size: 14px; width: 162px; color: black; padding-left: 5px; border-radius: 3px; border: 1px solid red; }
+
+
+
+.innerBTN { text-decoration: underline; float: right; z-index: 1000; position: relative; padding-top: 2px; padding-bottom: 1px; border: 0; }
+
+.LoginMobile { width: 162px; padding: 2px; border: 0; float: left; background-color: transparent; position: absolute; }
+
+#cont { display: none; }
+
+.display { transform-origin: 79.7344px 261.078px 0px; opacity: 1; z-index: 1000; pointer-events: auto; clip: rect(0px 928px 799px 0px); transform: rotate(0deg); }
+
+.ViewDetail { cursor: pointer; text-decoration: underline; }
+
+    .ViewDetail:hover, .termconitionLinks1:hover { color: #8c2c17; letter-spacing: 0.6px; }
+
+.termconitionLinks1 { display: inline-block; cursor: pointer; text-decoration: underline; color: white; font-size: 18px; }
+
+.termconitionLinks { display: inline-block; cursor: pointer; text-decoration: underline; color: white; font-size: 18px; }
+
+    .termconitionLinks:hover { color: #e05c3e; }
+
+#tblbtnCustompayment { display: none; margin-top: 10px; }
+
+.ViewNotieDetail { cursor: pointer; text-decoration: underline; color: white; }
+
+    .ViewNotieDetail:hover { color: #314949; letter-spacing: 1px; }
+
+.LeftBorder { border-left: 1px solid #493149; }
+
+#WelcomeMsg, .hide { display: none; }
+
+#tblPersonalInfo { display: none; }
+
+/*========================================== FAQs =====================================*/
+.plusMinus { font-weight: bold; float: left; padding-left: 2px; padding-right: 4px; content: "+"; }
+
+.faqContainer { margin-bottom: 10px; }
+
+.question:hover { background-color: #80C347; }
+
+.question { background-color: #5CAD5C; font-size: 21px; cursor: pointer; padding: 5px; }
+
+    .question a { cursor: pointer; }
+
+.answer { background-color: #77BB77; padding: 5px; font-size: 19px; display: none; }
+
+.lblUserNameFeedBackForm { font-size: 20px; padding-top: 5px; padding-bottom: 5px; height: 40px; }
+
+.lblFeedbackOption { font-size: 19px; padding-left: 5px; }
+
+.RadioListbtn { font-size: 17px; padding: 5px 0px 5px 10px; }
+
+    .RadioListbtn label { padding-right: 20px; }
+
+/*=====================================  tabs panel ============================*/
+.ui-tabs .ui-tabs-nav { margin: 0; padding: 0px !important; }
+
+.ui-tabs { position: relative; padding: .2em; background: transparent !important; }
+
+.liTabs2 { background: #875A87 !important; }
+
+    .liTabs2 a:visited { background: #6e496e !important; }
+
+    .liTabs2 a:hover { background: #6e496e !important; }
+
+    .liTabs2 .ui-tabs-anchor:active { background: #6e496e !important; }
+
+.liTabs a:hover { background: #1D7272 !important; }
+
+.liTabs { background: #259393!important; }
+
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; text-align: center; border-color: #145252 !important; position: relative; margin: 0px .2em 0 0 !important; top: 0; border-bottom-width: 0; border: none !important; padding: 0px; white-space: nowrap; height: 40px; width: auto; }
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor { padding: 10px !important; height: 40px; text-decoration: none; font-size: .6em; color: #fff !important; }
+
+.ui-tabs-anchor:active { color: white !important; background: #1D7272; border-color: #1d7272; }
+
+.ui-state-active a, .ui-state-active a:link { color: #fff !important; text-decoration: none; background: #1D7272; border-color: #1d7272; }
+
+.tabContentHeader { text-align: center; color: white; padding: 4px; font-size: 20px; height: 36px; }
+
+.buddyImage { height: 62px; width: 70px; }
+
+.buddyTopImage { height: 120px; margin-top: -70px; width: 120px; border-radius: 50%; border: 3px solid #29A3A3; box-sizing: content-box; }
+
+.actionIcon { border-radius: 20%; display: inline-block; padding: 2px; }
+
+    .actionIcon:hover { padding: 2px; background: #d5eaea; }
+
+.buddyProfileOuterTableLayout { background: #fff; width: 100%; margin-top: 60px; margin-bottom: 2px; border-collapse: collapse; }
+
+.lvOuterTableLayout { background: #fff; width: 100%; margin-bottom: 2px; border-collapse: collapse; }
+
+
+/*===================================== Accordian ===========================================*/
+.accordi { font-size: .7em !important; color: white !important; }
+
+    .accordi:hover { color: #000 !important; }
+
+.accordianContent { background: transparent; }
+
+.ui-state-active .ui-icon { background-image: none !IMPORTANT; }
+
+.ui-accordion { background: #1D7272; }
+
+    .ui-accordion .ui-accordion-header .ui-accordion-header-icon { DISPLAY: none !important; }
+
+.ui-tabs .ui-tabs-panel { padding: 0 !important; background: #1D7272 !important; }
+
+#divchangePassword, #divMyProfile, #divFeePayment, #divFeeDetails, #divPayHistory, #divSchoolAlerts, #divNoticBoard, #pwchange, #divParentReg2 { display: none; }
+
+#divMyBuddies { background: #186262; border-radius: 5px; }
+
+#dvBuddyProfile { display: none; }
+
+.DeltAlert:hover { cursor: pointer; }
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */ color: #000; opacity: 0.4; }
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: #000; }
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */ color: #000; }
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ color: #000; }
+
+.clsCheckBoxes { cursor: pointer; }
+
+#tblLoginOTPVerification { display: none; }
+
+/*=================================== model popup =====================================*/
+
+.progressbar { opacity: 1; filter: alpha(opacity=0); top: 0; left: 0; z-index: 9000; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3) !important; }
+
+.modal-overlay { opacity: 1; filter: alpha(opacity=0); position: absolute; top: 0; left: 0; z-index: 9000; width: 100%; height: 100%; }
+
+.divInnerLayout { position: relative; }
+
+a.close { line-height: 1; font-size: 1.5em; position: absolute; top: 5%; right: 2%; text-decoration: none; color: #bbb; }
+
+    a.close:hover { color: #222; -webkit-transition: color 1s ease; -moz-transition: color 1s ease; transition: color 1s ease; }
+
+.divInnerSchoolName { bottom: 15px; position: absolute; text-align: center; left: 5px; }
+
+.loader { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 9999; }
+
+#loaderIMG { position: absolute; left: 45%; top: 48%; -webkit-animation: spin 3s linear infinite; animation: spin 3s linear infinite; }
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+
+    100% { transform: rotate(360deg); }
+}
+
+.divInnerProcessLayout { position: absolute; left: 45%; top: 40%; }
+
+.InnerProcessIMG { -webkit-animation: spin 3s linear infinite; animation: spin 3s linear infinite; }
+
+
+#divLargerImage { display: none; width: 250px; height: 250px; position: absolute; bottom: 10%; left: 25%; z-index: 99; }
+
+#divOverlay { display: none; position: absolute; top: 0; left: 0; background-color: transparent; opacity: 0.5; width: 100%; height: 100%; z-index: 9999; }
+
+/*=========================================== Text Rotator =============================*/
+
+#demo { color: #fff; }
+
+    #demo p { display: none; }
+
+h1 { margin-top: 150px; }
+
+/*================= Slider at about efee tile ==================================*/
+/* Slideshow container */
+.slideshow-container { max-width: 100%; position: relative; margin-top: -10px; }
+
+/* Caption text */
+.text { color: #f2f2f2; font-size: 15px; padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center; }
+
+/* Number text (1/3 etc) */
+.numbertext { color: #f2f2f2; font-size: 14px; left: -15px; position: absolute; top: -17px; }
+
+/* The dots/bullets/indicators */
+.dot { height: 13px; width: 13px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease; }
+
+.active { background-color: #717171; }
+
+/* Fading animation */
+.fade { -webkit-animation-name: fade; -webkit-animation-duration: 1.5s; animation-name: fade; animation-duration: 1.5s; }
+
+@-webkit-keyframes fade {
+    from { opacity: .4; }
+
+    to { opacity: 1; }
+}
+
+@keyframes fade {
+    from { opacity: .4; }
+
+    to { opacity: 1; }
+}
+
+/***************************************************** My Profile Accoridon ********************************************/
+#dvMyStatus { display: inline; font-size: 16px; width: 100%; text-align: center; }
+
+.mystatusMessage { vertical-align: middle; }
+
+#txtMyStatus { display: none; }
+
+/*Accordian*/
+.accordion1 { width: 100%; background: none; margin-bottom: 8px; color: #fff; }
+
+    .accordion1 .accordion-head { color: #fff; background-color: #875A87; position: relative; padding: 8px; font-size: 0.7em; cursor: pointer; overflow: hidden; height: 35px; }
+
+        .accordion1 .accordion-head * { cursor: pointer; }
+
+        .accordion1 .accordion-head h4 { float: left; font-weight: 100; padding-top: 0px; }
+
+        .accordion1 .accordion-head:hover { filter: alpha(opacity=80); opacity: 0.80; }
+
+    .accordion1 .accordion-body { background: #996699; font-family: autoradiographic; font-size: 15px; padding: 1px; height: auto; }
+
+/*****************************============================ My Profile Tabs =========================================*/
+#mytextarea a:hover { background-color: #6e496e; }
+
+ul.tab { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #624162; }
+
+    /* Float the list items side by side */
+    ul.tab li { float: left; margin-right: 10px; background: #875A87; border-top-right-radius: 4px; border-top-left-radius: 4px; width: auto; height: 40px; }
+
+        /* Style the links inside the list items */
+        ul.tab li a { display: inline-block; color: #fff; text-align: center; padding: 10px 16px; text-decoration: none; transition: 0.3s; font-size: 17px; }
+
+            /* Change background color of links on hover */
+            ul.tab li a:hover { background-color: #6e496e; }
+
+#tabs-1 { display: block; }
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active { background-color: #6e496e; }
+
+/* Style the tab content */
+.tabscontents { display: none; -webkit-animation: fadeEffect 1s; animation: fadeEffect 1s; }
+
+@-webkit-keyframes fadeEffect {
+    from { opacity: 0; }
+
+    to { opacity: 1; }
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0; }
+
+    to { opacity: 1; }
+}
+
+/*================================================== Image Modal Box =======================================*/
+
+/* The Modal (background) */
+.modal { display: none; /* Hidden by default */ position: fixed; /* Stay in place */ z-index: 1000; /* Sit on top */ padding: 80px 20px 0 20px; /* Location of the box */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0,0,0,0.9); /* Black w/ opacity */ }
+
+/* Modal Content (Image) */
+.modal-content { margin: auto; display: block; width: 80%; max-width: 500px; }
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption { margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: #ccc; font-size: 15px; padding: 10px 0; height: 150px; }
+
+    #caption > a { border-radius: 4px; background-color: #b97eb9; border: 2px solid #b97eb9; }
+
+        #caption > a:hover { background-color: #493149; }
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { -webkit-animation-name: zoom; -webkit-animation-duration: 0.6s; animation-name: zoom; animation-duration: 0.6s; }
+
+@-webkit-keyframes zoom {
+    from { -webkit-transform: scale(0); }
+
+    to { -webkit-transform: scale(1); }
+}
+
+@keyframes zoom {
+    from { transform: scale(0); }
+
+    to { transform: scale(1); }
+}
+
+/* The Close Button */
+.closeModal { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; transition: 0.3s; z-index: 100; }
+
+    .closeModal:hover,
+    .closeModal:focus { color: #bbb; text-decoration: none; cursor: pointer; }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content { width: 100%; }
+}
