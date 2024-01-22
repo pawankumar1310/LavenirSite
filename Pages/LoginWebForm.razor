@@ -1,0 +1,42 @@
+﻿<!-- LoginWebForm.razor -->
+
+@page "/"
+@inherits LoginWebFormBase
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>L'avenir Conclave</title>
+    <style>
+        @* import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Handlee); *@
+    </style>
+    <link href="Styles/LoginFormStyles.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="_content/YourBlazorApp/Scripts/application.js"></script>
+</head>
+<body class="hiddenScroll" style="background-color: black;">
+
+    <div class="topnav">
+        <form class="login-form clearfix">
+            <p>
+                <input type="text" @bind="Email" placeholder="Enter E-Mail Address" />
+                <input type="text" @bind="MailOTP" placeholder="Enter OTP" disabled="@IsOTPVerificationDisabled" />
+                <span style="color: red; font-weight: bold;" hidden="@(!IsOTPVerificationFailed)">*OTP Verification Failed</span>
+            </p>
+            <button type="button" @onclick="SendOTP">
+                <i class="icon-arrow-right"></i>
+                <div>@ButtonLabel</div>
+            </button>
+        </form>
+        <div>
+            <img src="Images/KLC Conclave logo 100.png" alt="Lavenir" />
+        </div>
+    </div>
+
+    <div class="logo">
+        <img src="Images/shutterstock_446416807.jpg" style="width: 500px; height: 620px;" />
+    </div>
+
+</body>
+</html>
