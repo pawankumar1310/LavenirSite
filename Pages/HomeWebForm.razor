@@ -1,0 +1,285 @@
+<!-- Dashboard.razor -->
+@page "/HomeWebForm"
+@inherits HomeWebFormBase
+@inject NavigationManager NavigationManager
+
+<head>
+    @* <style type="text/css">
+        .myHoverButton:hover {
+            background-color: white;
+        }
+    </style> *@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'avenir Conclave</title>
+    <link href="Styles/HomePageNavStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/LoginFormStyles.css" rel="stylesheet" type="text/css" />
+    @* <link href="Styles/component.css" rel="stylesheet" type="text/css" /> *@
+    <link href="Styles/componentHome.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Formcomponent.css" rel="stylesheet" type="text/css" />
+    @* <link href="Styles/demo.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/expandcollapse.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/default.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/icons.css" rel="stylesheet" type="text/css" /> *@
+    <link href="Styles/HomeHeader.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/ScrollableTableStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/CarouselStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/BadgeCardStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/AdminDashboardStyles.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="Styles/menu/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/menu/demo.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/menu/component.css" />
+
+    <link href="Styles/slicebox/slicebox.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/slicebox/custom.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Scripts/slicebox/modernizr.custom.46884.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="Scripts/application.js"></script>
+    <script type="text/javascript" src="Scripts/carousel.js"></script>
+</head>
+
+
+<body style="background-color: black;">
+    <form id="form1" class="dashboard-form">
+        <div class="topnav" style="background-color: white;">
+            <div class="row">
+                <div class="navbar-column" style="width: auto;">
+                    <img src="Images/KLC Conclave logo 100.png" alt="Lavenir" />
+                </div>
+
+                <div class="navbar-column" style="width: auto;">
+                    <section class="section" id="ceres">
+                        <nav class="menu-ceres menu--ceres">
+                            <ul class="menu__list">
+
+                            </ul>
+                            <input type="hidden" id="eventStatus" />
+                        </nav>
+                        <script>
+                            // ... (Script content remains unchanged)
+                        </script>
+                    </section><br />
+                    @* <section class="section" id="juliet">
+                        <nav class="menu menu--juliet">
+                            <ul class="menu__list">
+                                <li class="menu__item__name">
+                                    <img src="Images/default-profile-image.png" alt="UserProfileImage"
+                                        style="height: 48px; width: 50px; border-radius: 10px;" />
+                                </li>
+
+                            </ul>
+                            <input type="hidden" id="profileStatus" />
+                            <input type="hidden" id="submitStatus" />
+                        </nav>
+                    </section> *@
+                </div>
+
+                <div class="navbar-column" style="float:right; width: 20%;">
+                    <p>
+                        <input type="text" @bind="Email" style="float: right; width: 100%;" readonly="true"
+                            class="login-fields-email" /><br />
+                        <input type="hidden" id="hiddenUserID" />
+                        <br />
+                        <select style="margin-top: 5px; float: right; width: 100%;" class="participant"
+                            @onchange="HandleParticipantTypeChange">
+                            <option value="0">Select Participant</option>
+                            <option value="Teacher">School Admin</option>
+                            <option value="Visitor">Partner</option>
+
+                        </select><br />
+                        <input type="hidden" id="reloadStatus" /><br />
+                        <button @onclick="Logout"
+                            style="margin-top: 5px; float: right; background-color: black; color: #3399FF; border: 2px solid black; border-radius: 5px 5px 5px 5px; width: 100%;">Logout</button><br /><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br />
+            <div class="main">
+                <div id="divMainImage" class="cbp-mc-form">
+                    @* <div class="MainContainer">
+                        <table>
+                            <tr>
+                                <td style="text-align: center;">
+                                    <img src="Images/shutterstock_446416807.jpg" style="width: 500px; height: 600px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div> *@
+                </div>
+                <div class="cbp-mc-form" id="divUserOptions">
+                    <section class="section" id="Valentine">
+                        <nav class="menu-valentine menu--valentine">
+                            <ul class="menu__list">
+
+                            </ul>
+
+                            <script src="Scripts/menu/classie.js"></script>
+                            <script src="Scripts/menu/clipboard.min.js"></script>
+                            <script>
+                                // Your JavaScript code for handling menu clicks
+                            </script>
+                        </nav>
+                    </section>
+
+                    <div class="MainContainer">
+                        <div class="table-wrapper">
+                            <table class="eventsTable">
+                                <!-- Your table content goes here -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Div1" class="cbp-mc-form">
+            <div id="dvUserDetails" class="MainContainer">
+                <div class="cbp-mc-column1">
+                    <h2 style="text-align:center; color: white;">USER REGISTRATION</h2>
+                </div>
+                <div class="cbp-mc-column1" id="personalInformation">
+                    <h2 style="text-align:center; color: white;">PERSONAL INFORMATION</h2>
+                    <label class="Headinglabel" style="color: white;">First Name</label>
+                    <input @bind="FirstName" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => FirstName)" />
+
+                    <label class="Headinglabel" style="color: white;">Last Name</label>
+                    <input @bind="LastName" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => LastName)" />
+
+                    <div
+                        style="height: 150px; width: 100%; position: relative; border: 2px solid #3399FF; border-radius: 5px; margin-left: 6px;">
+                        <label class="Headinglabel" style="color: white;">Upload Photo</label>
+                        <InputFile OnChange="HandleFileUpload" />
+                        <img src="@UserPhotoDisplay" class="updated-fields"
+                            style="color: white; width: 150px; height: 150px; right: 0;" />
+                    </div>
+
+                    <label class="Headinglabel" style="color: white;">Mobile Number</label>
+                    <input @bind="MobileNumber" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => MobileNumber)" />
+
+                    <label class="Headinglabel" style="color: white;">Communication Address</label>
+                    <textarea @bind="CommunicationAddress" class="fields" style="color: white;"></textarea>
+                    <ValidationMessage For="@(() => CommunicationAddress)" />
+
+                    <label class="Headinglabel" style="color: white;">Pincode</label>
+                    <input @bind="PinCode" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => PinCode)" />
+
+                    <label class="Headinglabel" style="color: white;">Country</label>
+                    <select @bind="SelectedCountry" class="fields" style="text-transform: uppercase; color: white;">
+                        <option value="0">Select Country</option>
+                        @foreach (var country in Countries)
+                        {
+                            <option value="@country">@country</option>
+                        }
+                    </select>
+                    <ValidationMessage For="@(() => SelectedCountry)" />
+                    <label class="Headinglabel" style="color: white;">State</label>
+                    <select @bind="SelectedState" class="fields" style="text-transform: uppercase; color: white;"
+                        @onblur="GetState">
+                        <option value="0">Select State</option>
+                        @foreach (var state in States)
+                        {
+                            <option value="@state">@state</option>
+                        }
+                    </select>
+                    <input type="hidden" id="stateField" />
+                    <ValidationMessage For="@(() => SelectedState)" />
+
+                    <label class="Headinglabel" style="color: white;">District / City</label>
+                    <select @bind="SelectedDistrict" class="fields" style="text-transform: uppercase; color: white;"
+                        @onblur="GetDistrict">
+                        <option value="0">Select District / City</option>
+                        @foreach (var district in Districts)
+                        {
+                            <option value="@district">@district</option>
+                        }
+                    </select>
+                    <input type="hidden" id="districtField" />
+                    <ValidationMessage For="@(() => SelectedDistrict)" />
+
+
+
+                    <label class="Headinglabel" style="color: white;">Referredby</label>
+                    <input @bind="ReferredBy" class="fields" style="color: white;" />
+                    <!-- Add similar Blazor components for the rest of the form elements -->
+                </div>
+
+                <div class="cbp-mc-column1" id="socialInformation">
+                    <h2 style="text-align:center; color: white;">SOCIAL INFORMATION</h2>
+
+                    <label class="Headinglabel" style="color: white;">Facebook Profile</label>
+                    <div class="social-input-container">
+                        <input @bind="FacebookProfile" class="fields" style="color: white; padding-left: 40px;" />
+                        <img src="Images/FB_C.png" class="social-media-icon"
+                            style="background: #46619C; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+
+
+                    </div>
+
+                    <label class="Headinglabel" style="color: white;">Twitter Profile</label>
+                    <div class="social-input-container">
+                        <input @bind="TwitterProfile" class="fields" style="color: white; padding-left: 40px;" />
+                        <img src="Images/Twitter_C.png" class="social-media-icon"
+                            style="background: #46619C; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+
+
+                    </div>
+
+                    <label class="Headinglabel" style="color: white;">Linkedin Profile</label>
+                    <div class="social-input-container">
+                        <input @bind="LinkedinProfile" class="fields" style="color: white; padding-left: 40px;" />
+                        <img src="Images/LI_C.png" class="social-media-icon"
+                            style="background: #46619C; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+
+
+                    </div>
+
+                    <label class="Headinglabel" style="color: white;">Youtube Channel</label>
+                    <div class="social-input-container">
+                        <input @bind="YoutubeChannel" class="fields" style="color: white; padding-left: 40px;" />
+                        <img src="Images/YT_C.png" class="social-media-icon"
+                            style="background: #46619C; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+
+
+                    </div>
+
+                    <label class="Headinglabel" style="color: white;">Instagram Profile</label>
+                    <div class="social-input-container">
+                        <input @bind="InstagramProfile" class="fields" style="color: white; padding-left: 40px;" />
+                        <img src="Images/Instagram_C.png" class="social-media-icon"
+                            style="background: #46619C; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+
+
+                    </div>
+
+                    <label class="Headinglabel" style="color: white;">Lycee Profile</label>
+                    <div class="social-input-container">
+                        <input @bind="LyceeProfile" class="fields" style="color: white; padding-left: 40px;" />
+                        <img src="Images/Lycee.png" class="social-media-icon"
+                            style="background: #46619C; border-top-right-radius: 3px; border-bottom-right-radius: 3px;" />
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div style="text-align: center">    
+            <button @onclick="Register" style="cursor: pointer; text-transform: uppercase; background-color: black; color: #3399FF; border-radius: 3px; border: 1px solid #3399FF; width: 20%; height: 40px; font-size: 30px;">
+                Submit
+            </button>
+            
+        </div>
+    </form>
+</body>
