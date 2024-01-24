@@ -27,7 +27,7 @@
 }
 
 .menu__link {
-	border:none;
+	border:none !important;
 	font-size: 1.05em;
 	font-weight: bold;
 	display: block;
@@ -56,6 +56,7 @@
     -khtml-user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     color: #b5b5b5;
+	border:none !important;
 }
 
 .menu__link:hover,
@@ -217,6 +218,7 @@
 }
 
 .menu--juliet .menu__link {
+	border:none !important;
 	position: relative;
 	margin: 0 1em;
 	padding-right: 0;
@@ -230,10 +232,12 @@
 .menu--juliet .menu__item--current .menu__link:hover,
 .menu--juliet .menu__item--current .menu__link:focus {
 	color: black;
+	border:none !important;
 }
 
 .menu--juliet .menu__item--current .menu__link::after,
 .menu--juliet .menu__item--current .menu__link::before {
+	border:none !important;
 	-webkit-transform: scale3d(1, 1, 1);
 	transform: scale3d(1, 1, 1);
 }

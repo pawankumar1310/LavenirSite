@@ -1,4 +1,4 @@
-<!-- Dashboard.razor -->
+
 @page "/DashBoard"
 @inherits UserDashBoardBase
 @inject NavigationManager NavigationManager
@@ -210,48 +210,33 @@
                     <ValidationMessage For="@(() => CommunicationAddress)" />
                     <br />
                     <label class="Headinglabel" style="color: white;">Pincode</label>
-                    <input @bind="PinCode" class="fields" style="color: white;" />
+                    <input @bind="InputPinCode" class="fields" style="color: white;" @oninput="DisplayEnteredPinCode" />
                     <ValidationMessage For="@(() => PinCode)" />
-                    <br />
-                    <label class="Headinglabel" style="color: white;">Country</label>
-                    <select @bind="SelectedCountry" class="fields" style="text-transform: uppercase; color: white;">
-                        <option value="0">Select Country</option>
-                        @foreach (var country in Countries)
-                        {
-                            <option value="@country">@country</option>
-                        }
-                    </select>
-                    <ValidationMessage For="@(() => SelectedCountry)" />
-                    <br />
-                    <label class="Headinglabel" style="color: white;">State</label>
-                    <select @bind="SelectedState" class="fields" style="text-transform: uppercase; color: white;"
-                        @onblur="GetState">
-                        <option value="0">Select State</option>
-                        @foreach (var state in States)
-                        {
-                            <option value="@state">@state</option>
-                        }
-                    </select>
-                    <input type="hidden" id="stateField" />
-                    <ValidationMessage For="@(() => SelectedState)" />
-                    <br />
-                    <label class="Headinglabel" style="color: white;">District / City</label>
-                    <select @bind="SelectedDistrict" class="fields" style="text-transform: uppercase; color: white;"
-                        @onblur="GetDistrict">
-                        <option value="0">Select District / City</option>
-                        @foreach (var district in Districts)
-                        {
-                            <option value="@district">@district</option>
-                        }
-                    </select>
-                    <input type="hidden" id="districtField" />
-                    <ValidationMessage For="@(() => SelectedDistrict)" />
+                         @* <label class="Headinglabel" style="color: white;">@AreaCityStateNation</label> *@
 
+                         <br/>
+ 
+                       
+                    <label class="Headinglabel" style="color: white;">Country</label>
+                    <input @bind="Country" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => Country)" />
+                    <br />
+ 
+                    <label class="Headinglabel" style="color: white;">State</label>
+                    <input @bind="State" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => State)" />
+                 
+                    <br />
+                     <label class="Headinglabel" style="color: white;">District / City</label>
+                    <input @bind="District" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => District)" />
+ 
                     <br />
 
                     <label class="Headinglabel" style="color: white;">Referredby</label>
                     <input @bind="ReferredBy" class="fields" style="color: white;" />
-                    <!-- Add similar Blazor components for the rest of the form elements -->
+
+
                 </div>
                 <br />
                 <div class="cbp-mc-column1" id="socialInformation">
