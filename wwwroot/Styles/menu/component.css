@@ -13,6 +13,7 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	border:none;
 }
 
 .menu__item {
@@ -26,6 +27,7 @@
 }
 
 .menu__link {
+	border:none;
 	font-size: 1.05em;
 	font-weight: bold;
 	display: block;
@@ -163,7 +165,7 @@
 	left: 50%;
 	width: 0;
 	height: 0;
-	border: solid transparent;
+	/* border: solid transparent; */
 	content: '';
 	pointer-events: none;
 }
@@ -197,8 +199,8 @@
 .menu--juliet .menu__item::before {
 	top: 95%;
 	margin-left: -9px;
-	border-width: 10px;
-	border-top-color: #b5b5b5;
+	/* border-width: 10px;
+	border-top-color: #b5b5b5; */
 }
 
 .menu--juliet .menu__item--current::before {

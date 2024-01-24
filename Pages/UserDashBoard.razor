@@ -4,11 +4,14 @@
 @inject NavigationManager NavigationManager
 
 <head>
-    @* <style type="text/css">
+    <style type="text/css">
     .myHoverButton:hover {
     background-color: white;
     }
-    </style> *@
+    .dashboard{
+        font-size: 50px;
+    }
+    </style> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>L'avenir Conclave</title>
     <link href="Styles/HomePageNavStyles.css" rel="stylesheet" type="text/css" />
@@ -27,7 +30,7 @@
     <link href="Styles/AdminDashboardStyles.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" type="text/css" href="Styles/menu/normalize.css" />
-    @* <link rel="stylesheet" type="text/css" href="Styles/menu/demo.css" /> *@
+    <link rel="stylesheet" type="text/css" href="Styles/menu/demo.css" />
     <link rel="stylesheet" type="text/css" href="Styles/menu/component.css" />
 
     <link href="Styles/slicebox/slicebox.css" rel="stylesheet" type="text/css" />
@@ -54,32 +57,29 @@
                     <section class="section" id="ceres">
                         <nav class="menu-ceres menu--ceres">
                             <ul class="menu__list">
-
-                                <li class="menu__item @(CurrentPage == "UserProfile" ? "menu__item--current" : "")">
-                                    <a href="#" class="menu__link" @onclick="NavigateTo">User
+                                <li class="menu__item menu__item--current" id="listUserProfile">
+                                    <a href="#" class="menu__link dashboard" style="font-size: 23px;" @onclick="NavigateTo">User
                                         Profile</a>
-                                    <button @onclick="lnkUserProfile_Click" style="display:none;"
-                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                    <button @onclick="lnkUserProfile_Click" style="display:none;" ID="lnkUserProfile"
+                                         >Link Button</button>
                                 </li>
-                                <li class="menu__item @(CurrentPage == "CurrentEvents" ? "menu__item--current" : "")">
-                                    <a href="#" class="menu__link" @onclick="NavigateTo">Current
+                                <li class="menu__item ">
+                                    <a href="#" class="menu__link" style="font-size: 23px;" @onclick="NavigateTo">Current
                                         Events</a>
                                     <button @onclick="lnkCurrentEvents_Click" style="display:none;"
-                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                        >Link Button</button>
                                 </li>
                                 <li class="menu__item @(CurrentPage == "UpcomingEvents" ? "menu__item--current" : "")">
-                                    <a href="#" class="menu__link" @onclick="NavigateTo">Upcoming Events</a>
+                                    <a href="#" class="menu__link" style="font-size: 23px;" @onclick="NavigateTo">Upcoming Events</a>
                                     <button @onclick="lnkUpcomingEvents_Click" style="display:none;"
-                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                         >Link Button</button>
                                 </li>
                                 <li class="menu__item @(CurrentPage == "PreviousEvents" ? "menu__item--current" : "")">
-                                    <a href="#" class="menu__link" @onclick="NavigateTo">Previous Events</a>
+                                    <a href="#" class="menu__link" style="font-size: 23px;" @onclick="NavigateTo">Previous Events</a>
                                     <button @onclick="lnkPreviousEvents_Click" style="display:none;"
-                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                         >Link Button</button>
                                 </li>
                              
-
-
                             </ul>
                             <input type="hidden" id="eventStatus" />
                         </nav>
@@ -87,7 +87,7 @@
                             // ... (Script content remains unchanged)
                         </script>
                     </section><br />
-                    <section class="section" id="juliet" style="display:@(visible ? "block" : "none")">
+                    <section class="section" id="juliet"  >
                         <nav class="menu menu--juliet">
                             <ul class="menu__list">
                                 <li class="menu__item__name" id="listUserProfileImage">
