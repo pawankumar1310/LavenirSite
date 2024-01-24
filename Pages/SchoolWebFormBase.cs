@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.Forms;
 
 namespace LavenirSite.Pages
 {
-    public class HomeWebFormBase : ComponentBase
+    public class SchoolWebFormBase : ComponentBase
     {
         protected string? FirstName { get; set; }
         protected string? LastName { get; set; }

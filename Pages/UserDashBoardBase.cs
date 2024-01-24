@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.Forms;
 
 namespace LavenirSite.Pages
 {
-    public class HomeWebFormBase : ComponentBase
+    public class UserDashBoardBase : ComponentBase
     {
         protected string? FirstName { get; set; }
         protected string? LastName { get; set; }
@@ -60,12 +60,6 @@ namespace LavenirSite.Pages
         protected string? Email { get; set; }
         protected string? Username { get; set; }
 
-        public void NavigateTo(string page)
-        {
-            // Add navigation logic here, for example:
-            // NavigationManager.NavigateTo($"/{page}");
-        }
-
         public void HandleParticipantTypeChange(ChangeEventArgs args)
         {
             // Handle the participant type change here
@@ -76,6 +70,58 @@ namespace LavenirSite.Pages
             // Handle logout logic here
         }
 
-        // Add any additional logic as needed
+    protected string? CurrentPage { get; set; }
+    protected bool IsLinkButtonVisible { get; set; } = false;
+    protected bool visible = false;
+    protected string UserProfileImage = "path_to_default_image.jpg"; // Provide a default image path
+    protected string ProfileStatus = "";
+    protected string SubmitStatus = "";
+
+    protected void EditUserProfile()
+    {
+        // Handle Edit Profile button click
+        // You can add navigation or other logic here
+    }
+
+    protected void ViewAchievements()
+    {
+        // Handle Achievements button click
+        // You can add navigation or other logic here
+    }
+
+    protected void ViewRecognitions()
+    {
+        // Handle Recognitions button click
+        // You can add navigation or other logic here
+    }
+    protected void NavigateTo()
+    {
+        // You can add additional logic here if needed
+    }
+
+    protected void lnkUserProfile_Click()
+    {
+        // Handle LinkButton click logic for UserProfile
+    }
+
+    protected void lnkCurrentEvents_Click()
+    {
+        // Handle LinkButton click logic for CurrentEvents
+    }
+
+    protected void lnkUpcomingEvents_Click()
+    {
+        // Handle LinkButton click logic for UpcomingEvents
+    }
+
+    protected void lnkPreviousEvents_Click()
+    {
+        // Handle LinkButton click logic for PreviousEvents
+    }
+
+    protected void Knowworker_Click()
+    {
+        // Handle LinkButton click logic for KnowledgeWorker
+    }
     }
 }

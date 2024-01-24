@@ -1,0 +1,186 @@
+@page "/SchoolWebForm"
+@inherits SchoolWebFormBase
+@inject NavigationManager NavigationManager
+ 
+<head>
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'avenir Conclave</title>
+    <link href="Styles/HomePageNavStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/LoginFormStyles.css" rel="stylesheet" type="text/css" />
+    @* <link href="Styles/component.css" rel="stylesheet" type="text/css" /> *@
+    <link href="Styles/componentHome.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Formcomponent.css" rel="stylesheet" type="text/css" />
+    @* <link href="Styles/demo.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/expandcollapse.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/default.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/icons.css" rel="stylesheet" type="text/css" /> *@
+    <link href="Styles/HomeHeader.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/ScrollableTableStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/CarouselStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/BadgeCardStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/AdminDashboardStyles.css" rel="stylesheet" type="text/css" />
+ 
+    <link rel="stylesheet" type="text/css" href="Styles/menu/normalize.css" />
+    @* <link rel="stylesheet" type="text/css" href="Styles/menu/demo.css" /> *@
+    <link rel="stylesheet" type="text/css" href="Styles/menu/component.css" />
+ 
+    <link href="Styles/slicebox/slicebox.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/slicebox/custom.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Scripts/slicebox/modernizr.custom.46884.js"></script>
+ 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="Scripts/application.js"></script>
+    <script type="text/javascript" src="Scripts/carousel.js"></script>
+</head>
+ 
+ 
+<body style="background-color: black;">
+    <form id="form1" class="dashboard-form">
+        <div class="topnav" style="background-color: white;">
+            <div class="row">
+                <div class="navbar-column" style="width: auto;">
+                    <img src="Images/KLC Conclave logo 100.png" alt="Lavenir" />
+                </div>
+ 
+                <div class="navbar-column" style="width: auto;">
+                    <section class="section" id="ceres">
+                        <nav class="menu-ceres menu--ceres">
+                            <ul class="menu__list">
+ 
+                            </ul>
+                            <input type="hidden" id="eventStatus" />
+                        </nav>
+                       
+                    </section><br />
+                   
+                </div>
+ 
+                <div class="navbar-column" style="float:right; width: 20%;">
+                    <p>
+                        <input type="text" @bind="Email" style="float: right; width: 100%;" readonly="true"
+                            class="login-fields-email" /><br />
+                        <input type="hidden" id="hiddenUserID" />
+                        <br />
+                        <select style="margin-top: 5px; float: right; width: 100%;" class="participant login-fields-email"
+                            @onchange="HandleParticipantTypeChange" >
+                            <option value="0">Select Participant</option>
+                            <option value="Teacher">School Admin</option>
+                            <option value="Visitor">Partner</option>
+ 
+                        </select><br />
+                        <input type="hidden" id="reloadStatus" /><br />
+                        <button @onclick="Logout" class="login-fields-email" 
+                            style="margin-top: 5px; float: right; background-color: black; color: #3399FF; border: 2px solid black; border-radius: 5px 5px 5px 5px; width: 100%;">Logout</button><br /><br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br />
+            <div class="main">
+                <div id="divMainImage" class="cbp-mc-form">
+                   
+                </div>
+                <div class="cbp-mc-form" id="divUserOptions">
+                    <section class="section" id="Valentine">
+                        <nav class="menu-valentine menu--valentine">
+                            <ul class="menu__list">
+ 
+                            </ul>
+ 
+                            <script src="Scripts/menu/classie.js"></script>
+                            <script src="Scripts/menu/clipboard.min.js"></script>
+                           
+                        </nav>
+                    </section>
+ 
+                    <div class="MainContainer">
+                        <div class="table-wrapper">
+                            <table class="eventsTable">
+                               
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Div1" class="cbp-mc-form">
+            <div id="dvUserDetails" class="MainContainer">
+                <div class="cbp-mc-column1">
+                    <h2 style="text-align:center; color: white;">SCHOOL INFORMATION</h2>
+                </div>
+                <div class="cbp-mc-column1" id="personalInformation">
+                    @* <h2 style="text-align:center; color: white;">PERSONAL INFORMATION</h2> *@
+                    <label class="Headinglabel" style="color: white;">School Name</label>
+                    <input @bind="FirstName" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => FirstName)" />
+ 
+                   
+                 
+ 
+                   
+ 
+                    <label class="Headinglabel" style="color: white;">School Address</label>
+                    <textarea @bind="CommunicationAddress" class="fields" style="color: white;"></textarea>
+                    <ValidationMessage For="@(() => CommunicationAddress)" />
+ 
+                    <label class="Headinglabel" style="color: white;">Pincode</label>
+                    <input @bind="PinCode" class="fields" style="color: white;" />
+                    <ValidationMessage For="@(() => PinCode)" />
+ 
+                    <label class="Headinglabel" style="color: white;">Country</label>
+                    <select @bind="SelectedCountry" class="fields" style="text-transform: uppercase; color: white;">
+                        <option value="0">Select Country</option>
+                        @foreach (var country in Countries)
+                        {
+                            <option value="@country">@country</option>
+                        }
+                    </select>
+                    <ValidationMessage For="@(() => SelectedCountry)" />
+                    <label class="Headinglabel" style="color: white;">State</label>
+                    <select @bind="SelectedState" class="fields" style="text-transform: uppercase; color: white;"
+                        @onblur="GetState">
+                        <option value="0">Select State</option>
+                        @foreach (var state in States)
+                        {
+                            <option value="@state">@state</option>
+                        }
+                    </select>
+                    <input type="hidden" id="stateField" />
+                    <ValidationMessage For="@(() => SelectedState)" />
+ 
+                    <label class="Headinglabel" style="color: white;">District / City</label>
+                    <select @bind="SelectedDistrict" class="fields" style="text-transform: uppercase; color: white;"
+                        @onblur="GetDistrict">
+                        <option value="0">Select District / City</option>
+                        @foreach (var district in Districts)
+                        {
+                            <option value="@district">@district</option>
+                        }
+                    </select>
+                    <input type="hidden" id="districtField" />
+                    <ValidationMessage For="@(() => SelectedDistrict)" />
+ 
+ 
+ 
+                   
+                </div>
+ 
+               
+            </div>
+        </div>
+ 
+ 
+        <div style="text-align: center">    
+            <button @onclick="Register" style="cursor: pointer; text-transform: uppercase; background-color: black; color: #3399FF; border-radius: 3px; border: 1px solid #3399FF; width: 20%; height: 40px; font-size: 30px;">
+                Submit
+            </button>
+           
+        </div>
+        <br/>
+    </form>
+</body>
+ 

@@ -1,6 +1,6 @@
 <!-- Dashboard.razor -->
-@page "/HomeWebForm"
-@inherits HomeWebFormBase
+@page "/DashBoard"
+@inherits UserDashBoardBase
 @inject NavigationManager NavigationManager
 
 <head>
@@ -55,6 +55,31 @@
                         <nav class="menu-ceres menu--ceres">
                             <ul class="menu__list">
 
+                                <li class="menu__item @(CurrentPage == "UserProfile" ? "menu__item--current" : "")">
+                                    <a href="#" class="menu__link" @onclick="NavigateTo">User
+                                        Profile</a>
+                                    <button @onclick="lnkUserProfile_Click" style="display:none;"
+                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                </li>
+                                <li class="menu__item @(CurrentPage == "CurrentEvents" ? "menu__item--current" : "")">
+                                    <a href="#" class="menu__link" @onclick="NavigateTo">Current
+                                        Events</a>
+                                    <button @onclick="lnkCurrentEvents_Click" style="display:none;"
+                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                </li>
+                                <li class="menu__item @(CurrentPage == "UpcomingEvents" ? "menu__item--current" : "")">
+                                    <a href="#" class="menu__link" @onclick="NavigateTo">Upcoming Events</a>
+                                    <button @onclick="lnkUpcomingEvents_Click" style="display:none;"
+                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                </li>
+                                <li class="menu__item @(CurrentPage == "PreviousEvents" ? "menu__item--current" : "")">
+                                    <a href="#" class="menu__link" @onclick="NavigateTo">Previous Events</a>
+                                    <button @onclick="lnkPreviousEvents_Click" style="display:none;"
+                                        disabled="@(!IsLinkButtonVisible)">Link Button</button>
+                                </li>
+                             
+
+
                             </ul>
                             <input type="hidden" id="eventStatus" />
                         </nav>
@@ -62,19 +87,30 @@
                             // ... (Script content remains unchanged)
                         </script>
                     </section><br />
-                    @* <section class="section" id="juliet">
-                    <nav class="menu menu--juliet">
-                    <ul class="menu__list">
-                    <li class="menu__item__name">
-                    <img src="Images/default-profile-image.png" alt="UserProfileImage"
-                    style="height: 48px; width: 50px; border-radius: 10px;" />
-                    </li>
-
-                    </ul>
-                    <input type="hidden" id="profileStatus" />
-                    <input type="hidden" id="submitStatus" />
-                    </nav>
-                    </section> *@
+                    <section class="section" id="juliet" style="display:@(visible ? "block" : "none")">
+                        <nav class="menu menu--juliet">
+                            <ul class="menu__list">
+                                <li class="menu__item__name" id="listUserProfileImage">
+                                    <img src="@UserProfileImage"
+                                        style="height: 48px; width: 50px; border-radius: 10px;" />
+                                </li>
+                                <li class="menu__item__name" id="listUserProfileName">
+                                    <label class="menu__link__name">@Username</label>
+                                </li>
+                                <li class="menu__item" id="listEditProfile">
+                                    <button class="menu__link" @onclick="EditUserProfile">Edit Profile</button>
+                                </li>
+                                <li class="menu__item" id="listAchievements">
+                                    <button class="menu__link" @onclick="ViewAchievements">Achievements</button>
+                                </li>
+                                <li class="menu__item" id="listRecognitions">
+                                    <button class="menu__link" @onclick="ViewRecognitions">Recognitions</button>
+                                </li>
+                            </ul>
+                            <input type="hidden" id="profileStatus" @bind="ProfileStatus" />
+                            <input type="hidden" id="submitStatus" @bind="SubmitStatus" />
+                        </nav>
+                    </section>
                 </div>
 
                 <div class="navbar-column" style="float:right; width: 20%;">
@@ -156,11 +192,13 @@
                     <div
                         style="height: 150px; width: 100%; position: relative; border: 2px solid #3399FF; border-radius: 5px; margin-left: 6px;">
                         <label class="Headinglabel" style="color: white; margin-left: 5px;">Upload Photo</label>
-                        <div style="height: 38px; width: 45%;  border: 2px solid #3399FF; border-radius: 5px; margin-left: 6px; margin-top: 6px;">
-                            <InputFile OnChange="HandleFileUpload" style="color: white; width: 50%; margin-left: 5px; padding: 2px;" />
+                        <div
+                            style="height: 38px; width: 45%;  border: 2px solid #3399FF; border-radius: 5px; margin-left: 6px; margin-top: 6px;">
+                            <InputFile OnChange="HandleFileUpload"
+                                style="color: white; width: 50%; margin-left: 5px; padding: 2px;" />
                         </div>
-                            <img src="@UserPhotoDisplay" class="updated-fields"
-                                style="width: 150px; height: 150px; right: 0;"/>
+                        <img src="@UserPhotoDisplay" class="updated-fields"
+                            style="width: 150px; height: 150px; right: 0;" />
                     </div>
                     <br />
                     <label class="Headinglabel" style="color: white;">Mobile Number</label>
